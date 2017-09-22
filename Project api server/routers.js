@@ -20,27 +20,36 @@ db.connect((err) => {
 });
 
 module.exports = function(app) {
-    // Select posts
+
+    // Select all posts
     app.get('/', (req, res) => {
         let sql = `SELECT tag.name  FROM tag;`;
-        let query = db.query(sql, (err, results) => {
+        let query = db.query(sql, (err, result) => {
             if(err) throw err;
-            console.log(results);
-            res.send(results);
+            console.log(result);
+            res.send(JSON.stringify(result));
         });
     });
     
-    // Select single post
-    app.get('/Search/:nmOfTag', (req, res) => {
-        let id = req.params.nmOfTag;
-        //let sql = `SELECT org.name   FROM org INNER JOIN org_has_tag ON org.id = org_has_tag.org_id where org_has_tag.tag_id = ? ;`;
+    // Select one or more post
+    app.get('/Search?', (req, res) => {
+        let names = req.query.name;
+    if (Array.isArray(names)) {
+         var tags = names.map(e => e);
+         var parTags = tags.map(e => '?').toString();
+    } else {
+         tags = [names];
+         parTags = '?';
+         console.log(tags);
+         console.log(parTags);
+    }
         let sql = `SELECT *
         FROM tag INNER JOIN ((org INNER JOIN contact ON org.id = contact.org_id) INNER JOIN org_has_tag ON org.id = org_has_tag.org_id) ON tag.id = org_has_tag.tag_id
-        WHERE tag.id = ?;`;
-                let query = db.query(sql,id, (err, result) => {
+        WHERE tag.name IN (${parTags});`;
+        let query = db.query(sql,tags, (err, result) => {
             if(err) throw err;
             console.log(result);
-            res.send(result);
+            res.send(JSON.stringify(result));
         });
     });
 }
