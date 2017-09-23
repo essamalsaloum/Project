@@ -23,7 +23,7 @@ module.exports = function(app) {
 
     // Select all posts
     app.get('/', (req, res) => {
-        let sql = `SELECT tag.name  FROM tag;`;
+        let sql = `SELECT tag.name_tag  FROM tag;`;
         let query = db.query(sql, (err, result) => {
             if(err) throw err;
             console.log(result);
@@ -44,8 +44,8 @@ module.exports = function(app) {
          console.log(parTags);
     }
         let sql = `SELECT *
-        FROM tag INNER JOIN ((org INNER JOIN contact ON org.id = contact.org_id) INNER JOIN org_has_tag ON org.id = org_has_tag.org_id) ON tag.id = org_has_tag.tag_id
-        WHERE tag.name IN (${parTags});`;
+        FROM tag INNER JOIN ((org INNER JOIN contact ON org.idorg = contact.org_id) INNER JOIN org_has_tag ON org.idorg = org_has_tag.org_id) ON tag.idtag = org_has_tag.tag_id
+        WHERE tag.name_tag IN (${parTags});`;
         let query = db.query(sql,tags, (err, result) => {
             if(err) throw err;
             console.log(result);
