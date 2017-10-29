@@ -1,0 +1,168 @@
+img{
+  width:30%;
+  margin: 1% 1% 2% 1%;
+}
+.cleari{
+   clear:right
+}
+.clealef{
+  clear: left
+}
+.txtcn{
+text-align: center
+}
+.rightmar{
+margin-right: 10%
+}
+.initi{
+  border-radius: 10px;
+  padding: 0px 5px 0px 5px;
+}
+.mainn:after{
+	content: ".";
+	visibility: hidden;
+	display: block;
+	clear: both;
+	height: 0;
+}
+.flo{
+float: left
+}
+.inl{
+display: inline;
+}
+.mardiv{
+  margin-left: 15%;
+  text-align: center
+}
+.jum{
+  width: 30%
+}
+.backc{
+  background-color: #e0f3ff;
+  padding: 10px 10px 10px 10px;
+  margin: 1% 1% 2% 1%;
+  border-radius: 20px;
+}
+p{
+  font-size: 85%
+}
+a{
+  font-size: 85%
+}
+.sizmap{
+  height: 500px;
+  width: 100%;
+  margin-top: 4%;
+}
+.goomap{
+  position: fixed;
+  right: 4%;
+  top: 4%;
+  width: 43%
+}
+.mainn:hover { 
+  background-color: rgb(255, 223, 223);
+}
+.mainn{
+  margin-top:3%;
+}
+.tags{
+  position: fixed;
+  right: 30px;
+  top: 565px;
+  width: 45%
+}
+.app{
+  margin-left:3%;
+  width:46% ;
+}
+.center{
+  text-align: center;
+  margin: 10% auto
+}
+.jumbotron{
+ padding: 1pc
+}
+.hi {
+  display: none
+}
+.vi{
+  display: block 
+}
+.loader {
+  margin: 75px auto;
+  border: 16px solid #bbb3b3;
+  border-radius: 50%;
+  border-top: 16px solid rgb(0, 195, 255);
+  border-bottom: 16px solid rgb(0, 128, 6);
+  width: 250px;
+  height: 250px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.adr{
+  width: 100%
+}
+.maimdiv{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  text-align: center
+}
+.oute{
+  background-color: rgb(91, 94, 95);
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   overflow: auto;
+}
+.app{
+  background-color: rgb(91, 94, 95);
+}
+#home{
+  text-align:center ;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index:-1;
+  position:absolute ;
+}
+.wvnlogo{ 
+   width: 60%; 
+   position:absolute ;
+   left:15% ;
+   top: 12%;
+   margin:0 ; 
+  z-index:  1;
+}
+.barhome{
+  width: 100%;
+  height:50px ;
+  background-color: rgb(228, 19, 25);
+  /* overflow: auto; */
+  position:absolute ;
+  z-index:  -1;
+}
+.btn-lg{
+margin-top:30px ;
+}
+.add{
+  position: fixed;
+  top: 2%;
+  right:10% 
+}
+.back{
+  position: fixed;
+  top: 2%;
+  right:4% 
+}
